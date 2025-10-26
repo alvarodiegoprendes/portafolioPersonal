@@ -56,7 +56,8 @@ class PortfolioController extends Controller
             Mail::send('emails.contact', ['data' => $emailData], function ($mail) use ($request) {
                 $mail->to('alvarodiegoprendes@gmail.com')
                     ->replyTo($request->email, $request->name)
-                    ->subject('Nuevo mensaje de contacto: ' . $request->subject);
+                    ->subject('Nuevo mensaje de contacto: ' . $request->subject)
+                    ->from(config('mail.from.address'), config('mail.from.name'));
             });
 
             return redirect()->route('home')
