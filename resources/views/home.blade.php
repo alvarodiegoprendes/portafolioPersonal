@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Álvaro Diego Prendes - Programador Full Stack')
-@section('meta_description', 'Desarrollador Full Stack especializado en Python, C++, Laravel y tecnologías web modernas. Contáctame para tu próximo proyecto.')
+@section('meta_description', 'Portafolio de Álvaro Diego Prendes - Desarrollador Full Stack especializado en Python, C++, Laravel, Django y desarrollo web. Proyectos freelance en Valencia, España.')
 
 @section('content')
 <!-- Hero Section -->
@@ -36,7 +36,7 @@
         </div>
         <div class="row align-items-center">
             <div class="col-lg-4 mb-4 mb-lg-0 text-center">
-                <img src="{{ asset('images/foto_perfil.jpg') }}" alt="Álvaro Diego Prendes" class="img-fluid rounded-circle shadow" style="max-width: 300px; width: 100%; height: 300px; object-fit: cover;">
+                <img src="{{ asset('images/foto_perfil.jpg') }}" alt="Álvaro Diego Prendes - Programador Full Stack especializado en Python, Laravel y Django en Valencia, España" class="img-fluid rounded-circle shadow" style="max-width: 300px; width: 100%; height: 300px; object-fit: cover;">
             </div>
             <div class="col-lg-8">
                 <h3 class="mb-4">Desarrollador Full Stack apasionado por la tecnología</h3>
@@ -148,7 +148,7 @@
             <!-- Proyecto 4 - Envipi -->
             <div class="col-md-6 col-lg-4">
                 <div class="card card-project h-100">
-                    <img src="{{ asset('images/envipi.png') }}" class="card-img-top" alt="Envipi" style="height: 200px; object-fit: cover;">
+                    <img src="{{ asset('images/envipi.png') }}" class="card-img-top" alt="Envipi - Plataforma web para gestión de envíos y logística desarrollada con Laravel por Álvaro Diego Prendes" style="height: 200px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h5 class="card-title mb-0">Envipi</h5>
@@ -172,7 +172,7 @@
             <!-- Proyecto 5 - Amatxomaitea -->
             <div class="col-md-6 col-lg-4">
                 <div class="card card-project h-100">
-                    <img src="{{ asset('images/amatoxomaitea.png') }}" class="card-img-top" alt="Amatxomaitea" style="height: 200px; object-fit: cover;">
+                    <img src="{{ asset('images/amatoxomaitea.png') }}" class="card-img-top" alt="Amatxomaitea - Sitio web de panadería desarrollado con Laravel y CSS3 por Álvaro Diego Prendes" style="height: 200px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h5 class="card-title mb-0">Amatxomaitea</h5>
@@ -196,7 +196,7 @@
             <!-- Proyecto 6 - Portafolio Electrónica -->
             <div class="col-md-6 col-lg-4">
                 <div class="card card-project h-100">
-                    <img src="{{ asset('images/taller_electronica.png') }}" class="card-img-top" alt="Portafolio Electrónica" style="height: 200px; object-fit: cover;">
+                    <img src="{{ asset('images/taller_electronica.png') }}" class="card-img-top" alt="Portafolio de Electrónica - Galería de proyectos Arduino y Raspberry Pi desarrollada por Álvaro Diego Prendes" style="height: 200px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h5 class="card-title mb-0">Portafolio Electrónica</h5>
@@ -371,7 +371,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
                         @endif
-                        
+
                         @if(session('error'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 <i class="fas fa-exclamation-circle me-2"></i>{{ session('error') }}
