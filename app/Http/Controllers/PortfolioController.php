@@ -44,6 +44,13 @@ class PortfolioController extends Controller
         }
 
         try {
+            // Usar SendGrid API directamente
+            $apiKey = env('SENDGRID_API_KEY');
+            
+            if (!$apiKey) {
+                throw new \Exception('SendGrid API Key no configurada');
+            }
+
             // Datos para el email
             $emailData = [
                 'name' => $request->name,
@@ -52,13 +59,65 @@ class PortfolioController extends Controller
                 'message' => $request->message,
             ];
 
-            // Enviar el email
-            Mail::send('emails.contact', ['data' => $emailData], function ($mail) use ($request) {
-                $mail->to('alvarodiegoprendes@gmail.com')
-                    ->replyTo($request->email, $request->name)
-                    ->subject('Nuevo mensaje de contacto: ' . $request->subject)
-                    ->from(config('mail.from.address'), config('mail.from.name'));
-            });
+            // Crear el contenido HTML del email
+            $htmlContent = view('emails.contact', ['data' => $emailData])->render();
+
+            // Preparar datos para SendGrid API
+            $data = [
+                'personalizations' => [
+                    [
+                        'to' => [
+                            [
+                                'email' => 'alvarodiegoprendes@gmail.com',
+                                'name' => 'Álvaro Diego Prendes'
+                            ]
+                        ],
+                        'subject' => 'Nuevo mensaje de contacto: ' . $request->subject
+                    ]
+                ],
+                'from' => [
+                    'email' => 'alvarodiegoprendes@gmail.com',
+                    'name' => 'Álvaro Diego Prendes'
+                ],
+                'reply_to' => [
+                    'email' => $request->email,
+                    'name' => $request->name
+                ],
+                'content' => [
+                    [
+                        'type' => 'text/html',
+                        'value' => $htmlContent
+                    ]
+                ]
+            ];
+
+            // Enviar vía cURL a SendGrid API
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://api.sendgrid.com/v3/mail/send');
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Authorization: Bearer ' . $apiKey,
+                'Content-Type: application/json'
+            ]);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            $result = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+
+            if ($httpCode !== 202) {
+                throw new \Exception('Error de SendGrid API: ' . $result);
+            }
+
+            // Registrar en logs
+            Log::info('Nuevo mensaje de contacto enviado por SendGrid API', [
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'http_code' => $httpCode
+            ]);
 
             return redirect()->route('home')
                 ->with('success', '¡Mensaje enviado correctamente! Te responderé pronto.');
