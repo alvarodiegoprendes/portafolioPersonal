@@ -18,8 +18,6 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="es">
 
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="sq1D3ePhc2DY15n16TAdYe3wcQvnLW_hiIPocxqAFLc">
     <meta name="revisit-after" content="7 days">
     <meta name="geo.region" content="ES-VC">
     <meta name="geo.placename" content="Valencia, España">
