@@ -43,33 +43,35 @@ class PortfolioController extends Controller
                 ->withInput();
         }
 
-        // Crear el mensaje de WhatsApp
-        $whatsappMessage = "Hola Álvaro! 👋\n\n";
-        $whatsappMessage .= "*De:* {$request->name}\n";
-        $whatsappMessage .= "*Email:* {$request->email}\n";
-        $whatsappMessage .= "*Asunto:* {$request->subject}\n\n";
-        $whatsappMessage .= "*Mensaje:*\n{$request->message}";
+        try {
+            // Datos para el email
+            $emailData = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message,
+            ];
 
-        // Codificar el mensaje para URL
-        $encodedMessage = urlencode($whatsappMessage);
+            // Enviar el email
+            Mail::send('emails.contact', ['data' => $emailData], function ($mail) use ($request) {
+                $mail->to('alvarodiegoprendes@gmail.com')
+                    ->replyTo($request->email, $request->name)
+                    ->subject('Nuevo mensaje de contacto: ' . $request->subject);
+            });
 
-        // Número de WhatsApp (formato internacional sin + ni espacios)
-        $whatsappNumber = '34692852139';
+            return redirect()->route('home')
+                ->with('success', '¡Mensaje enviado correctamente! Te responderé pronto.');
 
-        // URL de WhatsApp
-        $whatsappUrl = "https://wa.me/{$whatsappNumber}?text={$encodedMessage}";
+        } catch (\Exception $e) {
+            // Log del error
+            Log::error('Error al enviar email de contacto', [
+                'error' => $e->getMessage(),
+                'data' => $request->all()
+            ]);
 
-        // Guardar en logs para registro
-        Log::info('Nuevo mensaje de contacto redirigido a WhatsApp', [
-            'name' => $request->name,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'message' => $request->message,
-        ]);
-
-        // Redirigir a la home con la URL de WhatsApp para abrirla con JavaScript
-        return redirect()->route('home')
-            ->with('whatsapp_url', $whatsappUrl)
-            ->with('success', 'Redirigiendo a WhatsApp...');
+            return redirect()->back()
+                ->with('error', 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.')
+                ->withInput();
+        }
     }
 }
