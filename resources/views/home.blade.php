@@ -242,37 +242,46 @@
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Python</span>
-                        <span class="fw-bold">90%</span>
+                        <span class="fw-bold">70%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>C++</span>
-                        <span class="fw-bold">85%</span>
+                        <span class="fw-bold">50%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>PHP</span>
-                        <span class="fw-bold">88%</span>
+                        <span class="fw-bold">60%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 88%"></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>JavaScript</span>
-                        <span class="fw-bold">80%</span>
+                        <span class="fw-bold">30%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 30%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>SQL</span>
+                        <span class="fw-bold">60%</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"></div>
                     </div>
                 </div>
             </div>
@@ -281,37 +290,46 @@
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Laravel</span>
-                        <span class="fw-bold">90%</span>
+                        <span class="fw-bold">65%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Django y Django REST</span>
+                        <span class="fw-bold">70%</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 70%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Bootstrap</span>
-                        <span class="fw-bold">92%</span>
+                        <span class="fw-bold">75%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 92%"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>MySQL</span>
-                        <span class="fw-bold">85%</span>
+                        <span class="fw-bold">80%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Git & GitHub</span>
-                        <span class="fw-bold">88%</span>
+                        <span class="fw-bold">70%</span>
                     </div>
                     <div class="progress" style="height: 10px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 88%"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 70%"></div>
                     </div>
                 </div>
             </div>
