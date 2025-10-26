@@ -1,0 +1,19 @@
+{
+  "name": "Álvaro Diego Prendes - Portafolio",
+  "short_name": "Álvaro Prendes",
+  "description": "Portafolio y contacto de Álvaro Diego Prendes - Desarrollador Full Stack",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "icons": [
+    {
+      "src": "/imagenFavicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

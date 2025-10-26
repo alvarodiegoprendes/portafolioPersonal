@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0M3N5J45L"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-V0M3N5J45L');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-V0M3N5J45L');
     </script>
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <!-- opcional cache-busting -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}?v=2" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('imagenFavicon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('meta_description', 'Portafolio de Álvaro Diego Prendes - Programador Full Stack especializado en Python, C++, Laravel y desarrollo web')">
-    <meta name="keywords" content="programador valencia, desarrollador full stack españa, Python developer, Laravel developer, Django developer, desarrollo web valencia, freelance programador, portafolio web, álvaro diego prendes, C++ developer, PHP developer, desarrollo aplicaciones web, programador freelance valencia, desarrollo software a medida">
+    <meta name="keywords"
+        content="programador valencia, desarrollador full stack españa, Python developer, Laravel developer, Django developer, desarrollo web valencia, freelance programador, portafolio web, álvaro diego prendes, C++ developer, PHP developer, desarrollo aplicaciones web, programador freelance valencia, desarrollo software a medida">
     <meta name="author" content="Álvaro Diego Prendes">
     <meta name="robots" content="index, follow">
     <meta name="language" content="es">
@@ -128,6 +140,7 @@
 
     @yield('extra_css')
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
@@ -141,7 +154,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
+                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
+                            href="{{ route('home') }}">
                             <i class="fas fa-home me-1"></i>Inicio
                         </a>
                     </li>
@@ -180,13 +194,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0">&copy; {{ date('Y') }} Álvaro Diego Prendes. Todos los derechos reservados.</p>
+                    <p class="mb-0">&copy; {{ date('Y') }} Álvaro Diego Prendes. Todos los derechos reservados.
+                    </p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-white me-3">
                         <i class="fab fa-github fa-2x"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/alvaro-diego-6448032bb/" target="_blank" class="text-white me-3">
+                    <a href="https://www.linkedin.com/in/alvaro-diego-6448032bb/" target="_blank"
+                        class="text-white me-3">
                         <i class="fab fa-linkedin fa-2x"></i>
                     </a>
                     <a href="mailto:alvarodiegoprendes@gmail.com" class="text-white me-3">
@@ -202,4 +218,5 @@
 
     @yield('extra_js')
 </body>
+
 </html>
