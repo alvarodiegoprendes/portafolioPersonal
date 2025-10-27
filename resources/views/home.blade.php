@@ -86,13 +86,15 @@
         <div class="row g-4">
             <!-- Proyecto 1 -->
             <div class="col-md-6 col-lg-4">
+
+            <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-dark">
                 <div class="card card-project">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <i class="fas fa-folder-open fa-3x text-primary"></i>
-                            <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-dark">
+
                                 <i class="fab fa-github fa-2x"></i>
-                            </a>
+
                         </div>
                         <h5 class="card-title">Proyecto Django Rest</h5>
                         <p class="card-text">Aplicación desarrollada con Django Rest Framework para el manejo de un CRM</p>
@@ -102,17 +104,21 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
 
+
             <!-- Proyecto 2 -->
+
             <div class="col-md-6 col-lg-4">
+
+                            <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-dark">
                 <div class="card card-project">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <i class="fas fa-folder-open fa-3x text-primary"></i>
-                            <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-dark">
                                 <i class="fab fa-github fa-2x"></i>
-                            </a>
+
                         </div>
                         <h5 class="card-title">Recursos de C++ y Python</h5>
                         <p class="card-text">Repositorio de ejemplos y recursos para C++ y Python.</p>
@@ -122,17 +128,19 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
 
             <!-- Proyecto 3 -->
             <div class="col-md-6 col-lg-4">
+
+                            <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-dark">
                 <div class="card card-project">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <i class="fas fa-folder-open fa-3x text-primary"></i>
-                            <a href="https://github.com/alvarodiegoprendes" target="_blank" class="text-dark">
                                 <i class="fab fa-github fa-2x"></i>
-                            </a>
+
                         </div>
                         <h5 class="card-title">Aplicación Web Laravel</h5>
                         <p class="card-text">Plataforma web completa desarrollada con Laravel y Bootstrap.</p>
@@ -143,6 +151,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
 
             <!-- Proyecto 4 - Envipi -->
@@ -470,7 +479,7 @@
                             <h5 class="mb-3">Disponibilidad</h5>
                             <p class="mb-3">
                                 <i class="fas fa-check-circle text-success me-2"></i>
-                                Disponible para proyectos freelance
+                                Disponibilidad total para nuevos proyectos
                             </p>
                             <p class="mb-3">
                                 <i class="fas fa-check-circle text-success me-2"></i>
